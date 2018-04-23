@@ -14,7 +14,7 @@ public class MyInterceptor implements Interceptor {
 	@Override
 	public boolean onLoad(Object entity, Serializable id, Object[] state, String[] propertyNames, Type[] types)
 			throws CallbackException {
-		return false;
+		return true;
 	}
 
 	@Override

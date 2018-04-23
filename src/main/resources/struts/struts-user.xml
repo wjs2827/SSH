@@ -2,25 +2,29 @@
 <struts>
 	<package name="userManager" namespace="/" extends="struts-default">
 		<action name="add" class="userAction" method="add">
-		    <result name="success">/add.jsp</result>
+		    <result name="success">pages/add.jsp</result>
 		</action>
 		<action name="save" class="userAction" method="save">
 			<result name="success" type="redirect">query.do</result>
-			<result name="error">/error.jsp</result>
+			<result name="error">pages/error.jsp</result>
 		</action>
 		<action name="query" class="userAction" method="query">
-			<result name="success">/list.jsp</result>
-			<result name="error">/error.jsp</result>
+			<result name="success">pages/list.jsp</result>
+			<result name="error">pages/error.jsp</result>
 		</action>
 		<action name="queryById" class="userAction" method="queryById">
-			<result name="success">/edit.jsp</result>
-			<result name="error">/error.jsp</result>
+			<result name="success">pages/edit.jsp</result>
+			<result name="error">pages/error.jsp</result>
 		</action>
 		<action name="update" class="userAction" method="update">
 		    <result name="success" type="redirect">query.do</result>
 		</action>
 		<action name="delete" class="userAction" method="delete">
 		    <result name="success" type="redirect">query.do</result>
+		</action>
+		
+		<action name="login" class="userAction">
+		    <result name="success">pages/login/login.jsp</result>
 		</action>
 	</package>
 </struts>

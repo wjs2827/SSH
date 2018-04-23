@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/shutter.css">
 <title>用户列表</title>
 </head>
   
@@ -35,10 +36,35 @@
 				</tr>
            </s:iterator>
 		</tbody>
-
-	</table>
-
-	  
+		<div class="shutter">
+		<div class="shutter-img">
+		  <a href="#" data-shutter-title="Iron Man"><img src="images/shutter_1.jpg" alt="#"></a>
+		  <a href="#" data-shutter-title="Super Man"><img src="images/shutter_2.jpg" alt="#"></a>
+		  <a href="#" data-shutter-title="The Hulk"><img src="images/shutter_3.jpg" alt="#"></a>
+		   <a href="#" data-shutter-title="The your"><img src="images/shutter_4.jpg" alt="#"></a>
+		</div>
+		<ul class="shutter-btn">
+		  <li class="prev"></li>
+		  <li class="next"></li>
+		</ul>
+		</div>
+</table>
+<script src="js/jquery.min.js"></script>
+<script src="js/velocity.js"></script>
+<script src="js/shutter.js"></script> 
+<script>
+$(function () {
+  $('.shutter').shutter({
+	shutterW: 1000, // 容器宽度
+	shutterH: 358, // 容器高度
+	isAutoPlay: true, // 是否自动播放
+	playInterval: 3000, // 自动播放时间
+	curDisplay: 3, // 当前显示页
+	fullPage: false // 是否全屏展示
+  });
+});
+</script>
+<div style="text-align:center;clear:both">
+</div>	  
 </body>
- 
 </html>
