@@ -21,4 +21,29 @@
 		<property name="initialPoolSize" value="1"></property>
 		<property name="maxIdleTime" value="20"></property>
 	</bean>
+	
+	
+	<!-- 配置能够产生connection的connectionfactory，由JMS对应的服务厂商提供 -->
+    <bean id="tagertConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <constructor-arg name="brokerURL" value="${brokerURL}"/>
+    </bean>
+    <!-- 配置spring管理真正connectionfactory的connectionfactory，相当于spring对connectionfactory的一层封装 -->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="tagertConnectionFactory"/>
+    </bean>
+    <!-- 配置生产者 -->
+    <!-- Spring使用JMS工具类，可以用来发送和接收消息 -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <!-- 这里是配置的spring用来管理connectionfactory的connectionfactory -->
+        <property name="connectionFactory" ref="connectionFactory"/>
+    </bean>
+    <!-- 配置destination -->
+    <!-- 队列目的地 -->
+    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="item-add-queue"/>
+    </bean>
+    <!-- 话题目的地 -->
+    <bean id="itemAddTopic" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="item-add-topic"/>
+    </bean>
 </beans>

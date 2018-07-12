@@ -26,5 +26,8 @@
 		<action name="login" class="userAction">
 		    <result name="success">pages/login/login.jsp</result>
 		</action>
+		<action name="hightchats" class="userAction" method="hightchats">
+		    <result name="success">pages/chat.jsp</result>
+		</action>
 	</package>
 </struts>

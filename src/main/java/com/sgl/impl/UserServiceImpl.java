@@ -10,6 +10,4 @@ import com.sgl.service.UserService;
 @Transactional
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService { 
 	
-	
-	
 }

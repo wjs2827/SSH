@@ -112,6 +112,30 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>4.2.0.Final</version>
 		</dependency>
+         
+        <!-- MQ 集成jar引入 start -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-all</artifactId>
+			<version>5.14.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>4.0.8.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+			<version>4.0.8.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-spring</artifactId>
+			<version>5.14.1</version>
+		</dependency>
+		  <!-- MQ 集成jar引入 end -->
+		
 	</dependencies>
 	<build>          <!-- Maven插件 -->
 		<plugins>
